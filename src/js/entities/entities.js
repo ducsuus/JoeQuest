@@ -30,6 +30,9 @@ game.PlayerEntity = me.ObjectEntity.extend({
  
     ------ */
     update: function(dt) {
+
+        // vertical speed modifer, adjust at will (please, don't make me too big, somewhere in the world a poor innocent Joe becomes unhappy!)
+        verticalSpeedModifier = 0.2
  
         if (me.input.isKeyPressed('left')) {
             // flip the sprite on horizontal axis
@@ -44,16 +47,13 @@ game.PlayerEntity = me.ObjectEntity.extend({
         } else {
             this.vel.x = 0;
         }
-        if (me.input.isKeyPressed('jump')) {
-            // make sure we are not already jumping or falling
-            if (!this.jumping && !this.falling) {
-                // set current vel to the maximum defined value
-                // gravity will then do the rest
-                this.vel.y = -this.maxVel.y * me.timer.tick;
-                // set the jumping flag
-                this.jumping = true;
-            }
  
+        if(me.input.isKeyPressed('up')){
+            this.vel.y -= this.accel.y * me.timer.tick * 0.01;
+        } else if (me.input.isKeyPressed('down')){
+            this.vel.y += this.accel.y * me.timer.tick * 0.01;
+        } else {
+            this.vel.y = 0;
         }
  
         // check & update player movement

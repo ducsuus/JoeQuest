@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="20" height="20" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="free_tileset_version_10" tilewidth="32" tileheight="32">
-  <image source="../../../../QuackQuest-master/src/data/free_tileset_version_10.png" width="480" height="1216"/>
+  <image source="../../../../QuackQuest/QuackQuest-master/src/data/free_tileset_version_10.png" width="480" height="1216"/>
  </tileset>
  <tileset firstgid="571" name="metatiles32x32" tilewidth="32" tileheight="32">
-  <image source="../../../../QuackQuest-master/src/data/metatiles32x32.png" width="160" height="32"/>
+  <image source="../../../../QuackQuest/QuackQuest-master/src/data/metatiles32x32.png" width="160" height="32"/>
   <tile id="0">
    <properties>
     <property name="type" value="solid"/>
@@ -27,10 +27,10 @@
   </data>
  </layer>
  <objectgroup name="object layer" width="20" height="20">
-  <object name="mainPlayer" x="220" y="253" width="64" height="64">
+  <object name="mainPlayer" x="220" y="253" width="32" height="32">
    <properties>
-    <property name="image" value="gripe_run_right"/>
-    <property name="spritewidth" value="64"/>
+    <property name="image" value="gripe_run_right_small"/>
+    <property name="spritewidth" value="32"/>
    </properties>
   </object>
  </objectgroup>
