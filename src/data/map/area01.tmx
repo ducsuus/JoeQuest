@@ -27,10 +27,10 @@
   </data>
  </layer>
  <objectgroup name="object layer" width="20" height="20">
-  <object name="mainPlayer" x="15" y="474" width="32" height="32">
+  <object name="mainPlayer" x="15" y="474" width="22" height="32">
    <properties>
-    <property name="image" value="gripe_run_right_small"/>
-    <property name="spritewidth" value="32"/>
+    <property name="image" value="gripe_run_right_small_cropped"/>
+    <property name="spritewidth" value="22"/>
    </properties>
   </object>
   <object name="joeDoor" x="478" y="475" width="32" height="32"/>
