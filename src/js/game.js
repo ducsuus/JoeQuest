@@ -53,7 +53,10 @@ var game = {
 	   me.state.set(me.state.PLAY, new game.PlayScreen());
 	     
 	   // register our player entity in the object pool
-	   me.pool.register("mainPlayer", game.PlayerEntity);
+       me.pool.register("mainPlayer", game.PlayerEntity);
+
+       // register joeDoor
+       me.pool.register("joeDoor", game.JoeDoor);
 	             
 	   // enable the keyboard
        me.input.bindKey(me.input.KEY.UP,  "up");

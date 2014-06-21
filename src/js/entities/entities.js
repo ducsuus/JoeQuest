@@ -14,7 +14,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
         this.parent(x, y, settings);
  
         // set the default horizontal & vertical speed (accel vector)
-        this.setVelocity(3, 15);
+        this.setVelocity(3, 3);
 
         // ptthh. Who needs gravity?
         this.gravity = 0
@@ -30,9 +30,6 @@ game.PlayerEntity = me.ObjectEntity.extend({
  
     ------ */
     update: function(dt) {
-
-        // vertical speed modifer, adjust at will (please, don't make me too big, somewhere in the world a poor innocent Joe becomes unhappy!)
-        verticalSpeedModifier = 0.2
  
         if (me.input.isKeyPressed('left')) {
             // flip the sprite on horizontal axis
@@ -49,9 +46,9 @@ game.PlayerEntity = me.ObjectEntity.extend({
         }
  
         if(me.input.isKeyPressed('up')){
-            this.vel.y -= this.accel.y * me.timer.tick * 0.01;
+            this.vel.y -= this.accel.y * me.timer.tick;
         } else if (me.input.isKeyPressed('down')){
-            this.vel.y += this.accel.y * me.timer.tick * 0.01;
+            this.vel.y += this.accel.y * me.timer.tick;
         } else {
             this.vel.y = 0;
         }
