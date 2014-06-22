@@ -56,8 +56,15 @@ var game = {
        me.pool.register("mainPlayer", game.PlayerEntity);
 
        // register joeDoor
-       me.pool.register("joeDoor", game.JoeDoor);
-	             
+       //me.pool.register("joeDoor", game.JoeDoor);
+
+       // register exit
+       me.pool.register("exit", game.Exit);
+
+       // register Mr Fridge
+       me.pool.register("MrFridge", game.MrFridge);
+
+
 	   // enable the keyboard
        me.input.bindKey(me.input.KEY.UP,  "up");
 	   me.input.bindKey(me.input.KEY.LEFT,  "left");

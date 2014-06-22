@@ -1,0 +1,12 @@
+TODO File - what needs to be done...
+
+
+Mr Fridge - Incomplete:
+	
+	- Complete collision detection for Mr Fridge
+		In the player entity class every time there is a collision the game needs to check to see if it is
+		Mr Fridge the player is colliding with, if this is the case Mr Fridge needs to tell the player he
+		is being walked into!
+	- Setup text function
+		There needs to be some kind of function which can be applied to all NPCs to be used for the NPC
+		to talk - sound can be good but is normally a pain to understand, so the text needs to be clear.

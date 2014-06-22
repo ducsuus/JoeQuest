@@ -55,6 +55,11 @@ game.PlayerEntity = me.ObjectEntity.extend({
  
         // check & update player movement
         this.updateMovement();
+
+        // check for collision
+        // NOTE THIS LINE IS VERY VERY VERY IMPORTANT IF YOU WANT TO HAVE ANY KIND OF OBJECT WHICH WILL BE ACTIVATED ON COLLISION FOR EXAMPLE A DOOR!
+        // This isn't something I could find online and the tutorial does NOT make this clear!
+        var res = me.game.world.collide(this);
  
         // update animation if necessary
         if (this.vel.x!=0 || this.vel.y!=0) {
