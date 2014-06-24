@@ -20,6 +20,7 @@ game.resources = [
      */
     {name: "area01", type: "tmx", src: "data/map/area01.tmx"},
     {name: "area02", type: "tmx", src: "data/map/area02.tmx"},
-    {name: "land_am", type: "tmx", src: "data/map/land_am.tmx"}
+    {name: "land_am", type: "tmx", src: "data/map/land_am.tmx"},
+    {name: "restraunt", type: "tmx", src: "data/map/restraunt.tmx"}
  
 ];
