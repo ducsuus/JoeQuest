@@ -39,9 +39,5 @@ game.FirePot = me.ObjectEntity.extend({
       this.emitter.streamParticles();
   	}
 
-  },
-
-  joeFoundACollision: function(){
-  	console.log("Hello there, it appears that duck I was talking about was called Joe. He found a collision and told NPC.js via this function!")
   }
 });
