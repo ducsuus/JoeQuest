@@ -10,11 +10,12 @@ game.PlayerEntity = me.ObjectEntity.extend({
     ------ */
  
     init: function(x, y, settings) {
-
-
-        
         // call the constructor
         this.parent(x, y, settings);
+
+        // This variable allows us to set a type for the player so we can compare it later.
+        // This is useful for collisions, we can check to see if an NPC has collided with the player.
+        this.type = "player"
  
         // set the default horizontal & vertical speed (accel vector)
         this.setVelocity(3, 3);
