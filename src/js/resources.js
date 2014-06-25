@@ -14,6 +14,7 @@ game.resources = [
     {name: "gripe_run_right",  type:"image", src: "data/img/sprite/gripe_run_right.png"},
     {name: "gripe_run_right_small",  type:"image", src: "data/img/sprite/gripe_run_right_small.png"},
     {name: "gripe_run_right_small_cropped",  type:"image", src: "data/img/sprite/gripe_run_right_small_cropped.png"},
+    {name: "fred",  type:"image", src: "data/img/entity/npc/fred.png"},
      
     /* 
      * Maps. 
