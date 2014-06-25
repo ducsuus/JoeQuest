@@ -9,24 +9,25 @@ game.FirePot = me.ObjectEntity.extend({
 
   	// LET'S CREATE SOME FIRE!
     var image = me.loader.getImage('particle_explosion');
-    console.log("particle_explosion is " + image);
-    this.emitter = new me.ParticleEmitter(x, y, {
+    var emitter = new me.ParticleEmitter(x, y, {
       image: image,
-      width: 100,
-      totalParticles: 300,
-      angle: 1.1207997469048476,
-      angleVariation: 3.141592653589793,
-      speed: 8.736386234848165,
-      speedVariation: 0,
-      gravity: -0.32,
-      wind: -0.02,
-      frequency: 50
+      width: 7,
+      totalParticles: 5,
+      angle: 1.5409544421277865,
+      angleVariation: 0.49658186084145983,
+      speed: 2.234328136649182,
+      speedVariation: 1.392723484329839,
+      gravity: -0.08,
+      wind: 0.01,
+      frequency: 1,
+      maxEndScale: 0.1,
+      minEndScale: 0
     });
-    this.emitter.name = 'fire';
-    this.emitter.z = 4;
-    me.game.world.addChild(this.emitter);
-    me.game.world.addChild(this.emitter.container);
-    this.emitter.streamParticles();
+    emitter.name = 'fire';
+    emitter.z = 4;
+    me.game.world.addChild(emitter);
+    me.game.world.addChild(emitter.container);
+    emitter.streamParticles();
 
     console.log("Allegedly streaming particles");
 

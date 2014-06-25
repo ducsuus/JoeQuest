@@ -16,7 +16,7 @@ game.resources = [
     {name: "gripe_run_right_small_cropped",  type:"image", src: "data/img/sprite/gripe_run_right_small_cropped.png"},
 
     // NPC textures
-    {name: "fred",  type:"image", src: "data/img/entity/npc/fred.png"},
+    {name: "npc_fred",  type:"image", src: "data/img/entity/npc/fred.png"},
 
     // particle textures
     {name: "particle_explosion",  type:"image", src: "data/img/entity/particle/explosion.png"},

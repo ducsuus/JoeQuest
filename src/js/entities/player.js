@@ -33,57 +33,61 @@ game.PlayerEntity = me.ObjectEntity.extend({
  
     ------ */
     update: function(dt) {
- 
-        if (me.input.isKeyPressed('left')) {
-            // flip the sprite on horizontal axis
-            this.flipX(true);
-            // update the entity velocity
-            this.vel.x -= this.accel.x * me.timer.tick;
-        } else if (me.input.isKeyPressed('right')) {
-            // unflip the sprite
-            this.flipX(false);
-            // update the entity velocity
-            this.vel.x += this.accel.x * me.timer.tick;
-        } else {
-            this.vel.x = 0;
-        }
- 
-        if(me.input.isKeyPressed('up')){
-            this.vel.y -= this.accel.y * me.timer.tick;
-        } else if (me.input.isKeyPressed('down')){
-            this.vel.y += this.accel.y * me.timer.tick;
-        } else {
-            this.vel.y = 0;
-        }
- 
-        // check & update player movement
-        this.updateMovement();
 
-        // check for collision
+        // Check for collision
         // NOTE THIS LINE IS VERY VERY VERY IMPORTANT IF YOU WANT TO HAVE ANY KIND OF OBJECT WHICH WILL BE ACTIVATED ON COLLISION FOR EXAMPLE A DOOR!
         // This isn't something I could find online and the tutorial does NOT make this clear!
         var res = me.game.world.collide(this);
 
         if (res)
         {
-            //console.log("obj type is " + res.obj.type);
-            /*if (res.obj.type == me.game.ENEMY_OBJECT)
-            {
-               if ((res.y>0) && !this.jumping)
-               {
-                  // bounce (force jump)
-                  this.falling = false;
-                  this.vel.y = -this.maxVel.y * me.timer.tick;
-                  // set the jumping flag
-                  this.jumping = true;
-               }
-               else
-               {
-                  // let's flicker in case we touched an enemy
-                  this.renderable.flicker(750);
-               }
-            }*/
+            // There's been a collision between this and another object...
+
+            // Unless otherwise proved, assume there has not been a collision between another object (create this variable inside the if res for efficiency)
+            var collided = false;
+            
+
+            // Check to see if the collision was a NPC (with a value of "NPC")
+            //TODO #001: Convert this bit from a static set of strings to a list
+
+            if(res.obj.type === "NPC"){
+                collided = true;
+
+                // Make sure the player is not moving
+                //TODO #002: Make sure the player does not walk into any collidable object.
+                this.vel.x = 0;
+                this.vel.y = 0;
+            }
+
         }
+ 
+
+        if(!collided){
+            if (me.input.isKeyPressed('left')) {
+                // flip the sprite on horizontal axis
+                this.flipX(true);
+                // update the entity velocity
+                this.vel.x -= this.accel.x * me.timer.tick;
+            } else if (me.input.isKeyPressed('right')) {
+                // unflip the sprite
+                this.flipX(false);
+                // update the entity velocity
+                this.vel.x += this.accel.x * me.timer.tick;
+            } else {
+                this.vel.x = 0;
+            }
+     
+            if(me.input.isKeyPressed('up')){
+                this.vel.y -= this.accel.y * me.timer.tick;
+            } else if (me.input.isKeyPressed('down')){
+                this.vel.y += this.accel.y * me.timer.tick;
+            } else {
+                this.vel.y = 0;
+            }
+        }
+ 
+        // check & update player movement
+        this.updateMovement();
  
         // update animation if necessary
         if (this.vel.x!=0 || this.vel.y!=0) {

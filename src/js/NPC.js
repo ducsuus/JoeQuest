@@ -7,7 +7,7 @@ game.NPC = me.ObjectEntity.extend({
 
 	this.type = "NPC"
 
-	//this.collidable = true;
+	this.collidable = true;
   },
 
   onCollision: function(res, obj){

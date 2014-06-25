@@ -10,3 +10,15 @@ Mr Fridge - Incomplete:
 	- Setup NPC text function
 		There needs to be some kind of function which can be applied to all NPCs to be used for the NPC
 		to talk - sound can be good but is normally a pain to understand, so the text needs to be clear.
+
+
+#001
+	
+	In the player class, when a collision occurs instead of checking if it is of type "NPC" (or another
+	static string), check from a global list of objects with collision activated. (Create a global list
+	of all object types which are to be collided with.
+	
+#002
+	
+	In the player class, ensure the player does not walk through another object entity that is collidable
+	(IE NPCs) - fix the bug which sticks the player to the NPC and does not let them back away!

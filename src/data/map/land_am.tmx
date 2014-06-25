@@ -48,8 +48,12 @@
     <property name="to" value="restraunt"/>
    </properties>
   </object>
-  <object name="FirePot" x="2193" y="2822" width="32" height="32"/>
-  <object name="NPC" x="2352" y="2897" width="32" height="32"/>
+  <object name="FirePot" x="2192" y="2815" width="70" height="58"/>
+  <object name="NPC" x="2174" y="2993" width="32" height="32">
+   <properties>
+    <property name="image" value="npc_fred"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="collision" width="100" height="100" visible="0">
   <data encoding="base64">
