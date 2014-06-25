@@ -66,7 +66,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 
         if (res)
         {
-            console.log("obj type is " + res.obj.type);
+            //console.log("obj type is " + res.obj.type);
             /*if (res.obj.type == me.game.ENEMY_OBJECT)
             {
                if ((res.y>0) && !this.jumping)

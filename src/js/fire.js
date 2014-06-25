@@ -8,23 +8,22 @@ game.FirePot = me.ObjectEntity.extend({
   	this.type = "FirePot"
 
   	// LET'S CREATE SOME FIRE!
-      var x = me.game.viewport.getWidth() / 2;
-      var y = me.game.viewport.getHeight() - 50;
-      var image = me.loader.getImage('particle_explosion');
-      this.emitter = new me.ParticleEmitter(x, y, {
-        image: image,
-        width: 100,
-        totalParticles: 300,
-        angle: 1.1207997469048476,
-        angleVariation: 3.141592653589793,
-        speed: 8.736386234848165,
-        speedVariation: 0,
-        gravity: -0.32,
-        wind: -0.02,
-        frequency: 50
-      });
-      this.emitter.name = 'fire';
-      this.emitter.z = 4;
+    var image = me.loader.getImage('particle_explosion');
+    console.log("particle_explosion is " + image);
+    this.emitter = new me.ParticleEmitter(x, y, {
+      image: image,
+      width: 100,
+      totalParticles: 300,
+      angle: 1.1207997469048476,
+      angleVariation: 3.141592653589793,
+      speed: 8.736386234848165,
+      speedVariation: 0,
+      gravity: -0.32,
+      wind: -0.02,
+      frequency: 50
+    });
+    this.emitter.name = 'fire';
+    this.emitter.z = 4;
     me.game.world.addChild(this.emitter);
     me.game.world.addChild(this.emitter.container);
     this.emitter.streamParticles();
