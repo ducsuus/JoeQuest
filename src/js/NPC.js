@@ -13,8 +13,10 @@ game.NPC = me.ObjectEntity.extend({
   onCollision: function(res, obj){
 
   	//called
+  	console.log("Object type is: " + obj.type);
 
   	if (obj.type === 'player'){
+  		//not called
   		console.log("Ello Mr. Player, I sent a trained duck out to greet you!");
   	}
 

@@ -67,6 +67,9 @@ var game = {
        // register NPC
        me.pool.register("NPC", game.NPC);
 
+       // register fire
+       me.pool.register("FirePot", game.FirePot);
+
 
 	   // enable the keyboard
        me.input.bindKey(me.input.KEY.UP,  "up");
