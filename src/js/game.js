@@ -13,7 +13,7 @@ var game = {
     "onload" : function () {
  
         // Initialize the video.
-        if (!me.video.init("screen", 640, 480, true, 'auto')) {
+        if (!me.video.init("screen", window.innerWidth / 2, window.innerHeight / 2, true, 'auto')) {
             alert("Your browser does not support HTML5 canvas.");
             return;
         }
@@ -68,7 +68,7 @@ var game = {
        me.pool.register("NPC", game.NPC);
 
        // register fire
-       me.pool.register("FirePot", game.FirePot);
+       me.pool.register("ParticleEffect", game.ParticleEffect);
 
 
 	   // enable the keyboard

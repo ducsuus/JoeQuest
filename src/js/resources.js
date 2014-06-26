@@ -20,6 +20,7 @@ game.resources = [
 
     // particle textures
     {name: "particle_explosion",  type:"image", src: "data/img/entity/particle/explosion.png"},
+    {name: "particle_smoke",  type:"image", src: "data/img/entity/particle/smoke.png"},
      
     /* 
      * Maps. 
