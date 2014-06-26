@@ -34,6 +34,11 @@ game.PlayerEntity = me.ObjectEntity.extend({
     ------ */
     update: function(dt) {
 
+        // check & update player movement
+        // Must go before me.game.world.collide(this)!
+        this.updateMovement();
+ 
+
         // Check for collision
         // NOTE THIS LINE IS VERY VERY VERY IMPORTANT IF YOU WANT TO HAVE ANY KIND OF OBJECT WHICH WILL BE ACTIVATED ON COLLISION FOR EXAMPLE A DOOR!
         // This isn't something I could find online and the tutorial does NOT make this clear!
@@ -53,6 +58,24 @@ game.PlayerEntity = me.ObjectEntity.extend({
             if(res.obj.type === "NPC"){
                 collided = true;
 
+                console.log("x is " + res.x + " y is " + res.y);
+
+                if(res.x > 0){
+                    console.log("Collision left of NPC");
+                } else if(res.x < 0){
+                    console.log("Collision right of NPC");
+                } else if(res.y > 0){
+                    console.log("Collision above NPC");
+
+                    this.vel.y = -10;
+
+                } else if(res.y < 0){
+                    console.log("Collision below npc");
+                } else{
+                    // Say what, impossible collision? Or somebody was teleporting?
+                    console.log("Well this is embarising, you collided *inside* the NPC...")
+                }
+
                 // Make sure the player is not moving
                 //TODO #002: Make sure the player does not walk into any collidable object.
                 this.vel.x = 0;
@@ -62,7 +85,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
         }
  
 
-        if(!collided){
+        if(true){
             if (me.input.isKeyPressed('left')) {
                 // flip the sprite on horizontal axis
                 this.flipX(true);
@@ -85,15 +108,16 @@ game.PlayerEntity = me.ObjectEntity.extend({
                 this.vel.y = 0;
             }
         }
+
+        console.log("this.vel.x is " + this.vel.x + " this.vel.y is " + this.vel.y);
  
-        // check & update player movement
-        this.updateMovement();
- 
+
         // update animation if necessary
         if (this.vel.x!=0 || this.vel.y!=0) {
             // update object animation
             this.parent(dt);
             return true;
+            console.log("***************************************");
         }
          
         // else inform the engine we did not perform
