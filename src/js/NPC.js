@@ -8,6 +8,10 @@ game.NPC = me.ObjectEntity.extend({
 	this.type = "NPC"
 
 	this.collidable = true;
+
+	// Set the font for the NPC (Can be custom or HTML build in font (see browser compatible fonts)
+    //this.font = new me.BitmapFont("32x32_font", 32);
+    this.font = new me.Font("Arial", 15, "white");
   },
 
   onCollision: function(res, obj){
@@ -16,5 +20,13 @@ game.NPC = me.ObjectEntity.extend({
   		// Do something?
   	}
 
+  },
+
+  draw: function(context){
+  	this.parent(context);
+
+  	this.font.draw(context, "Hello their!", this.pos.x, this.pos.y - 50);
+
+  	this.font.draw(context, "Wub wub wub...", this.pos.x, this.pos.y - 25);
   }
 });

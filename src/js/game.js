@@ -13,7 +13,7 @@ var game = {
     "onload" : function () {
  
         // Initialize the video.
-        if (!me.video.init("screen", window.innerWidth / 2, window.innerHeight / 2, true, 'auto')) {
+        if (!me.video.init("screen", window.innerWidth, window.innerHeight, true, 'auto')) {
             alert("Your browser does not support HTML5 canvas.");
             return;
         }
@@ -73,8 +73,8 @@ var game = {
 
 	   // enable the keyboard
        me.input.bindKey(me.input.KEY.UP,  "up");
-	     me.input.bindKey(me.input.KEY.LEFT,  "left");
-	     me.input.bindKey(me.input.KEY.RIGHT, "right");
+       me.input.bindKey(me.input.KEY.LEFT,  "left");
+       me.input.bindKey(me.input.KEY.RIGHT, "right");
        me.input.bindKey(me.input.KEY.DOWN,  "down");
 	   //me.input.bindKey(me.input.KEY.X,     "jump", true);
 	      
