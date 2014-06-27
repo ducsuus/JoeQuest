@@ -55,5 +55,20 @@
     <property name="EffectType" value="smoke"/>
    </properties>
   </object>
+  <object name="NPC" x="692" y="785" width="64" height="64">
+   <properties>
+    <property name="image" value="npc_fred"/>
+   </properties>
+  </object>
+  <object name="NPC" x="938" y="957" width="64" height="64">
+   <properties>
+    <property name="image" value="npc_fred"/>
+   </properties>
+  </object>
+  <object name="NPC" x="1135" y="811" width="64" height="64">
+   <properties>
+    <property name="image" value="npc_fred"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
