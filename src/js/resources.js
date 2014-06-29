@@ -19,6 +19,7 @@ game.resources = [
 
     // NPC textures
     {name: "npc_fred",  type:"image", src: "data/img/entity/npc/fred.png"},
+    {name: "npc_red_invader",  type:"image", src: "data/img/entity/npc/red_invader.png"},
 
     // particle textures
     {name: "particle_explosion",  type:"image", src: "data/img/entity/particle/explosion.png"},

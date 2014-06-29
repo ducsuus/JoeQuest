@@ -22,6 +22,9 @@ var game = {
         if (document.location.hash === "#debug") {
             window.onReady(function () {
                 me.plugin.register.defer(this, debugPanel, "debug");
+
+                // Show hitboxes
+                me.debug.renderHitBox = true;
             });
         }
  
@@ -55,14 +58,8 @@ var game = {
 	   // register our player entity in the object pool
        me.pool.register("mainPlayer", game.PlayerEntity);
 
-       // register joeDoor
-       //me.pool.register("joeDoor", game.JoeDoor);
-
        // register exit
        me.pool.register("exit", game.Exit);
-
-       // register Mr Fridge
-       me.pool.register("MrFridge", game.MrFridge);
 
        // register NPC
        me.pool.register("NPC", game.NPC);

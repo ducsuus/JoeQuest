@@ -22,6 +22,8 @@ game.PlayerEntity = me.ObjectEntity.extend({
 
         // ptthh. Who needs gravity?
         this.gravity = 0
+
+        this.collidable = true;
  
         // set the display to follow our position on both axis
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
@@ -59,15 +61,15 @@ game.PlayerEntity = me.ObjectEntity.extend({
             if(res.obj.type === "NPC"){
 
                 // Make sure we know not to allow any more movement below
-                collided = true;
+                //collided = true;
 
                 // Make sure the player is not moving
-                this.vel.x = 0;
-                this.vel.y = 0;
+                //this.vel.x = 0;
+                //this.vel.y = 0;
 
                 // Checks to see what side of the NPC the collision was on, then checks to see if the key to go in that direction is pressed down (IE on top
                 // of NPC and holding down key) - if the player is not holding the down key push them up
-                if(res.x > 0){
+                /*if(res.x > 0){
                     if(!me.input.isKeyPressed("right")){
                         this.vel.x = -1;
                     }
@@ -87,7 +89,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
                     // Say what, impossible collision? Or somebody was teleporting?
                     // Let's hope this line never has to be called, otherwise we might have some serious efficiency issues when it comes to collision checking :(
                     console.log("Well this is embarising, you collided *inside* the NPC...")
-                }
+                }*/
             }
 
         }
